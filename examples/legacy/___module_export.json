@@ -1,0 +1,974 @@
+{
+  "creator": "Yosys 0.26+1 (git sha1 b1a011138, clang 10.0.0-4ubuntu1 -fPIC -Os)",
+  "modules": {
+    "svo_hdmi": {
+      "attributes": {
+        "dynports": 1,
+        "cells_not_processed": 1,
+        "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:23.1-197.10"
+      },
+      "parameter_default_values": {
+        "SVO_BITS_PER_ALPHA": 0,
+        "SVO_BITS_PER_BLUE": 8,
+        "SVO_BITS_PER_GREEN": 8,
+        "SVO_BITS_PER_PIXEL": 24,
+        "SVO_BITS_PER_RED": 8,
+        "SVO_FRAMERATE": 60,
+        "SVO_MODE": "640x480V"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "resetn": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "clk_pixel": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "clk_5x_pixel": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "locked": {
+          "direction": "input",
+          "bits": [ 6 ]
+        },
+        "tmds_clk_n": {
+          "direction": "output",
+          "bits": [ 7 ]
+        },
+        "tmds_clk_p": {
+          "direction": "output",
+          "bits": [ 8 ]
+        },
+        "tmds_d_n": {
+          "direction": "output",
+          "bits": [ 9, 10, 11 ]
+        },
+        "tmds_d_p": {
+          "direction": "output",
+          "bits": [ 12, 13, 14 ]
+        }
+      },
+      "cells": {
+        "$eq$/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:119$5": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 2,
+            "B_SIGNED": 0,
+            "B_WIDTH": 2,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:119.21-119.44"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 15, 16 ],
+            "B": [ "0", "1" ],
+            "Y": [ 17 ]
+          }
+        },
+        "$logic_and$/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:82$3": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:82.20-82.45"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 18 ],
+            "Y": [ 19 ]
+          }
+        },
+        "$logic_and$/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:83$4": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:83.26-83.57"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 6 ],
+            "B": [ 20 ],
+            "Y": [ 21 ]
+          }
+        },
+        "$logic_not$/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:147$6": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:147.7-147.26"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 22 ],
+            "Y": [ 23 ]
+          }
+        },
+        "$logic_not$/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:157$7": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:157.7-157.26"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 22 ],
+            "Y": [ 24 ]
+          }
+        },
+        "$logic_not$/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:167$8": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:167.7-167.26"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 22 ],
+            "Y": [ 25 ]
+          }
+        },
+        "$not$/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:188$10": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:188.10-188.27"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 21 ],
+            "Y": [ 26 ]
+          }
+        },
+        "$not$/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:188$11": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:188.10-188.27"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 21 ],
+            "Y": [ 27 ]
+          }
+        },
+        "$not$/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:188$9": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:188.10-188.27"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 21 ],
+            "Y": [ 28 ]
+          }
+        },
+        "$procdff$12": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:79.2-80.54"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 4 ],
+            "D": [ 3, 29, 30, 31 ],
+            "Q": [ 29, 30, 31, 20 ]
+          }
+        },
+        "$procdff$13": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:76.2-77.42"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 6, 32, 33, 34 ],
+            "Q": [ 32, 33, 34, 18 ]
+          }
+        },
+        "svo_enc": {
+          "hide_name": 0,
+          "type": "svo_enc",
+          "parameters": {
+            "SVO_BITS_PER_ALPHA": 0,
+            "SVO_BITS_PER_BLUE": 8,
+            "SVO_BITS_PER_GREEN": 8,
+            "SVO_BITS_PER_PIXEL": 24,
+            "SVO_BITS_PER_RED": 8,
+            "SVO_FRAMERATE": 60,
+            "SVO_MODE": "640x480V"
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:127.357-140.3"
+          },
+          "connections": {
+            "clk": [ 4 ],
+            "in_axis_tdata": [ 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58 ],
+            "in_axis_tready": [ 59 ],
+            "in_axis_tuser": [ 60 ],
+            "in_axis_tvalid": [ 61 ],
+            "out_axis_tdata": [ 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85 ],
+            "out_axis_tready": [ "1" ],
+            "out_axis_tuser": [ 86, 87, 88, 22 ],
+            "out_axis_tvalid": [ 89 ],
+            "resetn": [ 21 ]
+          }
+        },
+        "svo_overlay": {
+          "hide_name": 0,
+          "type": "svo_overlay",
+          "parameters": {
+            "SVO_BITS_PER_ALPHA": 0,
+            "SVO_BITS_PER_BLUE": 8,
+            "SVO_BITS_PER_GREEN": 8,
+            "SVO_BITS_PER_PIXEL": 24,
+            "SVO_BITS_PER_RED": 8,
+            "SVO_FRAMERATE": 60,
+            "SVO_MODE": "640x480V"
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:106.361-125.3"
+          },
+          "connections": {
+            "clk": [ 4 ],
+            "enable": [ "1" ],
+            "in_axis_tdata": [ 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113 ],
+            "in_axis_tready": [ 114 ],
+            "in_axis_tuser": [ 115 ],
+            "in_axis_tvalid": [ 116 ],
+            "out_axis_tdata": [ 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58 ],
+            "out_axis_tready": [ 59 ],
+            "out_axis_tuser": [ 60 ],
+            "out_axis_tvalid": [ 61 ],
+            "over_axis_tdata": [ "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1" ],
+            "over_axis_tready": [ 117 ],
+            "over_axis_tuser": [ 118, 17 ],
+            "over_axis_tvalid": [ 119 ],
+            "resetn": [ 21 ]
+          }
+        },
+        "svo_tcard": {
+          "hide_name": 0,
+          "type": "svo_tcard",
+          "parameters": {
+            "SVO_BITS_PER_ALPHA": 0,
+            "SVO_BITS_PER_BLUE": 8,
+            "SVO_BITS_PER_GREEN": 8,
+            "SVO_BITS_PER_PIXEL": 24,
+            "SVO_BITS_PER_RED": 8,
+            "SVO_FRAMERATE": 60,
+            "SVO_MODE": "640x480V"
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:85.359-93.3"
+          },
+          "connections": {
+            "clk": [ 4 ],
+            "out_axis_tdata": [ 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113 ],
+            "out_axis_tready": [ 114 ],
+            "out_axis_tuser": [ 115 ],
+            "out_axis_tvalid": [ 116 ],
+            "resetn": [ 3 ]
+          }
+        },
+        "svo_term": {
+          "hide_name": 0,
+          "type": "svo_term",
+          "parameters": {
+            "SVO_BITS_PER_ALPHA": 0,
+            "SVO_BITS_PER_BLUE": 8,
+            "SVO_BITS_PER_GREEN": 8,
+            "SVO_BITS_PER_PIXEL": 24,
+            "SVO_BITS_PER_RED": 8,
+            "SVO_FRAMERATE": 60,
+            "SVO_MODE": "640x480V"
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:95.358-104.3"
+          },
+          "connections": {
+            "clk": [ 2 ],
+            "oclk": [ 4 ],
+            "out_axis_tdata": [ 15, 16 ],
+            "out_axis_tready": [ 117 ],
+            "out_axis_tuser": [ 118 ],
+            "out_axis_tvalid": [ 119 ],
+            "resetn": [ 19 ]
+          }
+        },
+        "svo_tmds_0": {
+          "hide_name": 0,
+          "type": "svo_tmds",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:144.11-152.3"
+          },
+          "connections": {
+            "clk": [ 4 ],
+            "ctrl": [ 87, 88 ],
+            "de": [ 23 ],
+            "din": [ 78, 79, 80, 81, 82, 83, 84, 85 ],
+            "dout": [ 120, 121, 122, 123, 124, 125, 126, 127, 128, 129 ],
+            "resetn": [ 21 ]
+          }
+        },
+        "svo_tmds_1": {
+          "hide_name": 0,
+          "type": "svo_tmds",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:154.11-162.3"
+          },
+          "connections": {
+            "clk": [ 4 ],
+            "ctrl": [ "0", "0" ],
+            "de": [ 24 ],
+            "din": [ 70, 71, 72, 73, 74, 75, 76, 77 ],
+            "dout": [ 130, 131, 132, 133, 134, 135, 136, 137, 138, 139 ],
+            "resetn": [ 21 ]
+          }
+        },
+        "svo_tmds_2": {
+          "hide_name": 0,
+          "type": "svo_tmds",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:164.11-172.3"
+          },
+          "connections": {
+            "clk": [ 4 ],
+            "ctrl": [ "0", "0" ],
+            "de": [ 25 ],
+            "din": [ 62, 63, 64, 65, 66, 67, 68, 69 ],
+            "dout": [ 140, 141, 142, 143, 144, 145, 146, 147, 148, 149 ],
+            "resetn": [ 21 ]
+          }
+        },
+        "tmds_bufds[0]": {
+          "hide_name": 0,
+          "type": "$array:0:4:\\ELVDS_OBUF",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:191.13-195.3"
+          },
+          "connections": {
+            "I": [ 150, 151, 152, 4 ],
+            "O": [ 12, 13, 14, 8 ],
+            "OB": [ 9, 10, 11, 7 ]
+          }
+        },
+        "tmds_bufds[1]": {
+          "hide_name": 0,
+          "type": "$array:1:4:\\ELVDS_OBUF",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:191.13-195.3"
+          },
+          "connections": {
+            "I": [ 150, 151, 152, 4 ],
+            "O": [ 12, 13, 14, 8 ],
+            "OB": [ 9, 10, 11, 7 ]
+          }
+        },
+        "tmds_bufds[2]": {
+          "hide_name": 0,
+          "type": "$array:2:4:\\ELVDS_OBUF",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:191.13-195.3"
+          },
+          "connections": {
+            "I": [ 150, 151, 152, 4 ],
+            "O": [ 12, 13, 14, 8 ],
+            "OB": [ 9, 10, 11, 7 ]
+          }
+        },
+        "tmds_bufds[3]": {
+          "hide_name": 0,
+          "type": "$array:3:4:\\ELVDS_OBUF",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:191.13-195.3"
+          },
+          "connections": {
+            "I": [ 150, 151, 152, 4 ],
+            "O": [ 12, 13, 14, 8 ],
+            "OB": [ 9, 10, 11, 7 ]
+          }
+        },
+        "tmds_serdes[0]": {
+          "hide_name": 0,
+          "type": "$array:0:3:\\OSER10",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:174.9-189.3"
+          },
+          "connections": {
+            "D0": [ 120, 130, 140 ],
+            "D1": [ 121, 131, 141 ],
+            "D2": [ 122, 132, 142 ],
+            "D3": [ 123, 133, 143 ],
+            "D4": [ 124, 134, 144 ],
+            "D5": [ 125, 135, 145 ],
+            "D6": [ 126, 136, 146 ],
+            "D7": [ 127, 137, 147 ],
+            "D8": [ 128, 138, 148 ],
+            "D9": [ 129, 139, 149 ],
+            "FCLK": [ 5 ],
+            "PCLK": [ 4 ],
+            "Q": [ 150, 151, 152 ],
+            "RESET": [ 28 ]
+          }
+        },
+        "tmds_serdes[1]": {
+          "hide_name": 0,
+          "type": "$array:1:3:\\OSER10",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:174.9-189.3"
+          },
+          "connections": {
+            "D0": [ 120, 130, 140 ],
+            "D1": [ 121, 131, 141 ],
+            "D2": [ 122, 132, 142 ],
+            "D3": [ 123, 133, 143 ],
+            "D4": [ 124, 134, 144 ],
+            "D5": [ 125, 135, 145 ],
+            "D6": [ 126, 136, 146 ],
+            "D7": [ 127, 137, 147 ],
+            "D8": [ 128, 138, 148 ],
+            "D9": [ 129, 139, 149 ],
+            "FCLK": [ 5 ],
+            "PCLK": [ 4 ],
+            "Q": [ 150, 151, 152 ],
+            "RESET": [ 26 ]
+          }
+        },
+        "tmds_serdes[2]": {
+          "hide_name": 0,
+          "type": "$array:2:3:\\OSER10",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:174.9-189.3"
+          },
+          "connections": {
+            "D0": [ 120, 130, 140 ],
+            "D1": [ 121, 131, 141 ],
+            "D2": [ 122, 132, 142 ],
+            "D3": [ 123, 133, 143 ],
+            "D4": [ 124, 134, 144 ],
+            "D5": [ 125, 135, 145 ],
+            "D6": [ 126, 136, 146 ],
+            "D7": [ 127, 137, 147 ],
+            "D8": [ 128, 138, 148 ],
+            "D9": [ 129, 139, 149 ],
+            "FCLK": [ 5 ],
+            "PCLK": [ 4 ],
+            "Q": [ 150, 151, 152 ],
+            "RESET": [ 27 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\locked_clk_q[3:0]": {
+          "hide_name": 1,
+          "bits": [ 6, 32, 33, 34 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:76.2-77.42"
+          }
+        },
+        "$0\\resetn_clk_pixel_q[3:0]": {
+          "hide_name": 1,
+          "bits": [ 3, 29, 30, 31 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:79.2-80.54"
+          }
+        },
+        "$eq$/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:119$5_Y": {
+          "hide_name": 1,
+          "bits": [ 17 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:119.21-119.44"
+          }
+        },
+        "$logic_and$/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:82$3_Y": {
+          "hide_name": 1,
+          "bits": [ 19 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:82.20-82.45"
+          }
+        },
+        "$logic_and$/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:83$4_Y": {
+          "hide_name": 1,
+          "bits": [ 21 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:83.26-83.57"
+          }
+        },
+        "$logic_not$/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:147$6_Y": {
+          "hide_name": 1,
+          "bits": [ 23 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:147.7-147.26"
+          }
+        },
+        "$logic_not$/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:157$7_Y": {
+          "hide_name": 1,
+          "bits": [ 24 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:157.7-157.26"
+          }
+        },
+        "$logic_not$/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:167$8_Y": {
+          "hide_name": 1,
+          "bits": [ 25 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:167.7-167.26"
+          }
+        },
+        "$not$/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:188$10_Y": {
+          "hide_name": 1,
+          "bits": [ 26 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:188.10-188.27"
+          }
+        },
+        "$not$/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:188$11_Y": {
+          "hide_name": 1,
+          "bits": [ 27 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:188.10-188.27"
+          }
+        },
+        "$not$/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:188$9_Y": {
+          "hide_name": 1,
+          "bits": [ 28 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:188.10-188.27"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:24.8-24.11"
+          }
+        },
+        "clk_5x_pixel": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:29.8-29.20"
+          }
+        },
+        "clk_pixel": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:28.8-28.17"
+          }
+        },
+        "clk_pixel_resetn": {
+          "hide_name": 0,
+          "bits": [ 21 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:83.7-83.23"
+          }
+        },
+        "clk_resetn": {
+          "hide_name": 0,
+          "bits": [ 19 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:82.7-82.17"
+          }
+        },
+        "locked": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:30.8-30.14"
+          }
+        },
+        "locked_clk_q": {
+          "hide_name": 0,
+          "bits": [ 32, 33, 34, 18 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:73.12-73.24"
+          }
+        },
+        "resetn": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:25.8-25.14"
+          }
+        },
+        "resetn_clk_pixel_q": {
+          "hide_name": 0,
+          "bits": [ 29, 30, 31, 20 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:74.12-74.30"
+          }
+        },
+        "term_out_tdata": {
+          "hide_name": 0,
+          "bits": [ 15, 16 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:60.13-60.27"
+          }
+        },
+        "term_out_tready": {
+          "hide_name": 0,
+          "bits": [ 117 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:101.20-101.35"
+          }
+        },
+        "term_out_tuser": {
+          "hide_name": 0,
+          "bits": [ 118 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:61.13-61.27"
+          }
+        },
+        "term_out_tvalid": {
+          "hide_name": 0,
+          "bits": [ 119 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:58.7-58.22"
+          }
+        },
+        "tmds_clk_n": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:33.15-33.25"
+          }
+        },
+        "tmds_clk_p": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:34.15-34.25"
+          }
+        },
+        "tmds_d": {
+          "hide_name": 0,
+          "bits": [ 150, 151, 152 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:67.13-67.19"
+          }
+        },
+        "tmds_d0": {
+          "hide_name": 0,
+          "bits": [ 120, 130, 140 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:70.13-70.20"
+          }
+        },
+        "tmds_d1": {
+          "hide_name": 0,
+          "bits": [ 121, 131, 141 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:70.22-70.29"
+          }
+        },
+        "tmds_d2": {
+          "hide_name": 0,
+          "bits": [ 122, 132, 142 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:70.31-70.38"
+          }
+        },
+        "tmds_d3": {
+          "hide_name": 0,
+          "bits": [ 123, 133, 143 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:70.40-70.47"
+          }
+        },
+        "tmds_d4": {
+          "hide_name": 0,
+          "bits": [ 124, 134, 144 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:70.49-70.56"
+          }
+        },
+        "tmds_d5": {
+          "hide_name": 0,
+          "bits": [ 125, 135, 145 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:71.13-71.20"
+          }
+        },
+        "tmds_d6": {
+          "hide_name": 0,
+          "bits": [ 126, 136, 146 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:71.22-71.29"
+          }
+        },
+        "tmds_d7": {
+          "hide_name": 0,
+          "bits": [ 127, 137, 147 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:71.31-71.38"
+          }
+        },
+        "tmds_d8": {
+          "hide_name": 0,
+          "bits": [ 128, 138, 148 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:71.40-71.47"
+          }
+        },
+        "tmds_d9": {
+          "hide_name": 0,
+          "bits": [ 129, 139, 149 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:71.49-71.56"
+          }
+        },
+        "tmds_d_n": {
+          "hide_name": 0,
+          "bits": [ 9, 10, 11 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:35.15-35.23"
+          }
+        },
+        "tmds_d_p": {
+          "hide_name": 0,
+          "bits": [ 12, 13, 14 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:36.15-36.23"
+          }
+        },
+        "tmds_serdes_shift1": {
+          "hide_name": 0,
+          "bits": [ 153, 154, 155 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:68.13-68.31"
+          }
+        },
+        "tmds_serdes_shift2": {
+          "hide_name": 0,
+          "bits": [ 156, 157, 158 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:69.13-69.31"
+          }
+        },
+        "vdma_tdata": {
+          "hide_name": 0,
+          "bits": [ 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:50.32-50.42"
+          }
+        },
+        "vdma_tready": {
+          "hide_name": 0,
+          "bits": [ 114 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:49.7-49.18"
+          }
+        },
+        "vdma_tuser": {
+          "hide_name": 0,
+          "bits": [ 115 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:51.13-51.23"
+          }
+        },
+        "vdma_tvalid": {
+          "hide_name": 0,
+          "bits": [ 116 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:48.7-48.18"
+          }
+        },
+        "video_enc_tdata": {
+          "hide_name": 0,
+          "bits": [ 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:64.32-64.47"
+          }
+        },
+        "video_enc_tready": {
+          "hide_name": 0,
+          "bits": [ "1" ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:63.25-63.41"
+          }
+        },
+        "video_enc_tuser": {
+          "hide_name": 0,
+          "bits": [ 86, 87, 88, 22 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:65.13-65.28"
+          }
+        },
+        "video_enc_tvalid": {
+          "hide_name": 0,
+          "bits": [ 89 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:63.7-63.23"
+          }
+        },
+        "video_tdata": {
+          "hide_name": 0,
+          "bits": [ 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:55.32-55.43"
+          }
+        },
+        "video_tready": {
+          "hide_name": 0,
+          "bits": [ 59 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:54.7-54.19"
+          }
+        },
+        "video_tuser": {
+          "hide_name": 0,
+          "bits": [ 60 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:56.13-56.24"
+          }
+        },
+        "video_tvalid": {
+          "hide_name": 0,
+          "bits": [ 61 ],
+          "attributes": {
+            "src": "/home/aukusti/Dev/FPGA/TangNano-9K-example/hdmi/src/svo_hdmi.v:53.7-53.19"
+          }
+        }
+      }
+    }
+  }
+}

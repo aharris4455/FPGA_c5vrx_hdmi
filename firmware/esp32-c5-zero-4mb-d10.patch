@@ -1,0 +1,63 @@
+diff --git a/main/experimental.c b/main/experimental.c
+index 808a99b..7468e91 100644
+--- a/main/experimental.c
++++ b/main/experimental.c
+@@ -6,6 +6,10 @@
+ #include <string.h>
+ #include "esp_system.h"
+ 
++/* Local FPGA-tap build: force Clock Pin D10 on (web flasher has no
++ * experimental control for it). */
++#define C5VRX_FORCE_CLOCK_D10 1
++
+ static experimental_blob_t s_exp = {.version = EXP_VERSION};
+ static volatile bool s_save_pending;
+ static uint32_t s_failed, s_revision;
+@@ -48,6 +52,9 @@ void experimental_load(void)
+     if (experimental_blob_valid(&b)) s_exp = b;
+ #ifdef HWX_NO_DAC
+     s_exp.value[EXP_CLOCK_D10] = 0;   /* D10 is a hardware experiment pad */
++#endif
++#ifdef C5VRX_FORCE_CLOCK_D10
++    s_exp.value[EXP_CLOCK_D10] = 1;   /* FPGA tap build: D10 always requested */
+ #endif
+     s_clock_d10 = experimental_get(EXP_CLOCK_D10) != 0;
+ }
+diff --git a/main/transport.c b/main/transport.c
+index f92dc52..f1f7cae 100644
+--- a/main/transport.c
++++ b/main/transport.c
+@@ -187,7 +187,7 @@ static esp_err_t prepare_tx(void)
+ #endif
+     if (experimental_clock_d10()) {
+         cfg.clk_out_gpio_num = 10;
+-        cfg.data_gpio_nums[2] = 7;
++        cfg.data_gpio_nums[2] = 6;   /* local D10 build: GPIO6, not strapping GPIO7 */
+     }
+     /* The driver owns these pads through menu and halted restarts. Data
+      * shifts on falling edges; capture on rising edges (verify on hardware).
+diff --git a/partitions.csv b/partitions.csv
+index 785056b..1aad80a 100644
+--- a/partitions.csv
++++ b/partitions.csv
+@@ -1,5 +1,5 @@
+ # Name,   Type, SubType, Offset,   Size,     Flags
+ nvs,      data, nvs,     0x9000,   0x6000,
+ phy_init, data, phy,     0xf000,   0x1000,
+-factory,  app,  factory, 0x10000,  0x300000,
+-flightlog,data, 0x99,    0x310000, 0x180000,
++factory,  app,  factory, 0x10000,  0x260000,
++flightlog,data, 0x99,    0x270000, 0x180000,
+diff --git a/sdkconfig.defaults b/sdkconfig.defaults
+index f07823d..19340d1 100644
+--- a/sdkconfig.defaults
++++ b/sdkconfig.defaults
+@@ -1,7 +1,7 @@
+ # C5VRX-5: single-purpose MODEM_DIAG -> U85Q -> DAC receiver.
+ CONFIG_IDF_TARGET="esp32c5"
+ CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y
+-CONFIG_ESPTOOLPY_FLASHSIZE_8MB=y
++CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+ CONFIG_ESPTOOLPY_FLASHMODE_QIO=y
+ CONFIG_ESPTOOLPY_FLASHFREQ_80M=y
+ CONFIG_PARTITION_TABLE_CUSTOM=y

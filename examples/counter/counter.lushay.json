@@ -1,0 +1,8 @@
+{
+    "name": "counter",
+    "board": "tangnano9k",
+    "top": "top",
+    "includedFiles": ["counter.v"],
+    "constraintsFile": "counter.cst",
+    "programMode": "flash"
+}

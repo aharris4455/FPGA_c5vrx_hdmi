@@ -1,0 +1,25 @@
+diff --git a/partitions.csv b/partitions.csv
+index 785056b..1aad80a 100644
+--- a/partitions.csv
++++ b/partitions.csv
+@@ -1,5 +1,5 @@
+ # Name,   Type, SubType, Offset,   Size,     Flags
+ nvs,      data, nvs,     0x9000,   0x6000,
+ phy_init, data, phy,     0xf000,   0x1000,
+-factory,  app,  factory, 0x10000,  0x300000,
+-flightlog,data, 0x99,    0x310000, 0x180000,
++factory,  app,  factory, 0x10000,  0x260000,
++flightlog,data, 0x99,    0x270000, 0x180000,
+diff --git a/sdkconfig.defaults b/sdkconfig.defaults
+index f07823d..19340d1 100644
+--- a/sdkconfig.defaults
++++ b/sdkconfig.defaults
+@@ -1,7 +1,7 @@
+ # C5VRX-5: single-purpose MODEM_DIAG -> U85Q -> DAC receiver.
+ CONFIG_IDF_TARGET="esp32c5"
+ CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y
+-CONFIG_ESPTOOLPY_FLASHSIZE_8MB=y
++CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+ CONFIG_ESPTOOLPY_FLASHMODE_QIO=y
+ CONFIG_ESPTOOLPY_FLASHFREQ_80M=y
+ CONFIG_PARTITION_TABLE_CUSTOM=y

@@ -1,0 +1,15 @@
+# Build outputs and generated artifacts
+*.fs
+*.bin
+fpga_esp_rx.json
+fpga_esp_rx_pnr.json
+firmware/build-*/flasher_args.json
+firmware/build-*/bootloader/
+firmware/build-*/partition_table/
+
+# Logs
+*.log
+
+# Editor / OS cruft
+.DS_Store
+*.swp

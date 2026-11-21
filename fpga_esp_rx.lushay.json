@@ -1,0 +1,15 @@
+{
+    "name": "fpga_esp_rx",
+    "board": "tangnano9k",
+    "top": "top",
+    "includedFiles": [
+        "rtl/top.v",
+        "rtl/cvbs_capture.v",
+        "rtl/line_buffer.v",
+        "rtl/video_out.v",
+        "rtl/svo_tmds.v",
+        "rtl/gowin_rpll.v"
+    ],
+    "constraintsFile": "tangnano9k.cst",
+    "programMode": "flash"
+}
